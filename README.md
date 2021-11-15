@@ -27,7 +27,7 @@ lien pour cloner le répositoire : git@github.com:SENEAssane/ProjectGroup7.git
 
 ### Packages nécessaires au fonctionnement du programme
 
-cette liste sera mise à jour : `requests` `json` `pandas` `pyproj` `geopandas`
+cette liste sera mise à jour : `requests` `json` `pandas` `pyproj` `geopandas` `osmnx` `numpy`
 
 
 ### Indications et conseils d'utilisation

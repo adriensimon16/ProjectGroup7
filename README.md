@@ -47,13 +47,22 @@ cette liste sera mise à jour : `requests` `json` `pandas` `pyproj` `geopandas` 
 
 ## Plan de travail
 
-Assane s'occupera de 
+Chacun de nous s'occupera d'un des trois objectifs majeurs du projet avec des possibles contribution des autres membres du groupe.
 
-Abderrahim s'occupera de 
+Les tâches intermédiaires seront traitées en commun par nous tous, selon la pertinance de celles-ci avec notre charge de travail principale.
 
-Adrien s'occupera de 
 
+
+Assane s'occupera de la carte et ses interfaces
+
+Abderrahim s'occupera des distributions des prix
+
+Adrien s'occupera de l'algorithme d'optimisation de trajet
+
+les conseils d'utilisation et la documentation sera remplie au fur et à mesure de l'avancement du projet.
+
+Le projet sera accompagné d'une présentation orale sous la forme d'une vidéo qui sera rendue en même temps que ce dernier. 
 
 ## Documentation et références
 
---
+-- 

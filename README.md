@@ -21,7 +21,7 @@ Pour réaliser ce projet nous allons répartir les tâches entre nous pour que d
 
 ## Lien SSH 
 
---
+lien pour cloner le répositoire : git@github.com:adriensimon16/ProjectGroup7.git
 
 ## Packages et prérequis
 

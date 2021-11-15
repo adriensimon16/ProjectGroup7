@@ -21,6 +21,8 @@ df_brut = df_brut.reset_index()
 X = df_brut['X']
 Y = df_brut['Y']
 #%%
+inProj = Proj(init="epsg:2154")
+outProj = Proj(init="epsg:4326")
 
 #%%
 

@@ -32,7 +32,7 @@ cette liste sera mise à jour : `requests` `json` `pandas` `pyproj` `geopandas`
 
 ### Indications et conseils d'utilisation
 
-
+--
 
 ## Plan de travail
 

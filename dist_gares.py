@@ -1,12 +1,12 @@
 #%% 
+import numpy as np
 import requests
 import json
 import pandas as pd
-from pyproj import Proj, transform 
+from pyproj import Proj, transform , CRS
 import geopandas as gpd
 
 #%%
-
 
 df_brut = pd.read_csv('Gares-peage_2019.csv' , sep = ';')
 
@@ -21,18 +21,21 @@ df_brut = df_brut.reset_index()
 X = df_brut['X']
 Y = df_brut['Y']
 #%%
-inProj = Proj(init="epsg:2154")
-outProj = Proj(init="epsg:4326")
+inProj = Proj("+proj=lcc +lat_1=49 +lat_2=44 +lat_0=46.5 +lon_0=3 +x_0=700000 +y_0=6600000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs")
 
+outProj = Proj("+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs")
+
+Coord = transform(inProj,outProj,X,Y)
+print(Coord)
 #%%
 
-GPS=[]     #couples (x,y)
+GPS=[]     
 for i in range (len(df_brut)):
     GPS.append( transform(inProj, outProj, X[i], Y[i]))
 
 #%%
 dist = []
-#call the OSMR API
+
 for i in range (len(GPS)):
     if i-1 < 0:
         x,y = GPS[i]
@@ -42,8 +45,7 @@ for i in range (len(GPS)):
 
     r = requests.get(f"http://router.project-osmr.org/route/v1/car/{x},{y};{x1},{y1}?overwiev=false""")
 
-#then you load the response using the json library
-#by default you get only one alternative so you acces the 0-th element of the 'routes'
+
     routes =json.loads(r.content)
     route_1 = routes.get("routes")[0]
     dist.append(round(route_1['distance']/100))

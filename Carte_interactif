@@ -31,7 +31,7 @@ for i in range (len(data)):
 # Afficher toutes les sorties
 m = folium.Map(location=[43.654448,3.992643], zoom_start=12)
 
-N=np.shape(GPS)
+N = np.shape(GPS)
 for i in range (N[0]):
     tooltip = Ville[i]
     folium.Marker(
@@ -42,7 +42,7 @@ m
 
 client = openrouteservice.Client(key='5b3ce3597851110001cf6248a649f5b5021e4f02b016b51649758663')
 m = folium.Map(location=[43.654448,3.992643],zoom_start=10, control_scale=True,tiles="cartodbpositron")
-N=np.shape(GPS)
+N = np.shape(GPS)
 with(open('test.json','+w')) as f:
  f.write(json.dumps(res,indent=4, sort_keys=True))
 coords = (GPS[0],GPS[19])

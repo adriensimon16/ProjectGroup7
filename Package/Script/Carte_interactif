@@ -1,0 +1,100 @@
+#%%
+# importer les packages 
+import folium
+from download import download
+import os
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+import requests
+import openrouteservice
+from openrouteservice import convert
+import json
+
+
+#%%
+# Lecture des données GPS X,Y
+data = pd.read_csv("coordonnées.csv")
+Ville = data['NOMGARE']
+X = data['X']
+Y = data['Y']
+
+# %%
+# Stocker les valeurs de X,Y dans un vecteur GPS
+GPS = [] 
+for i in range (len(data)):
+      GPS.append((X[i],Y[i]))
+
+
+
+#%%
+# Afficher toutes les sorties
+m = folium.Map(location=[43.654448,3.992643], zoom_start=12)
+
+N = np.shape(GPS)
+for i in range (N[0]):
+    tooltip = Ville[i]
+    folium.Marker(
+     [GPS[i][1],GPS[i][0]] ,popup="<strong>location One</strong>", tooltip=tooltip
+                    ).add_to(m)
+m
+#%%
+
+client = openrouteservice.Client(key='5b3ce3597851110001cf6248a649f5b5021e4f02b016b51649758663')
+m = folium.Map(location=[43.654448,3.992643],zoom_start=10, control_scale=True,tiles="cartodbpositron")
+N = np.shape(GPS)
+with(open('test.json','+w')) as f:
+ f.write(json.dumps(res,indent=4, sort_keys=True))
+coords = (GPS[0],GPS[19])
+res = client.directions(coords)
+geometry = client.directions(coords)['routes'][0]['geometry']
+decoded = convert.decode_polyline(geometry)
+distance_txt = "<h4> <b>Distance :&nbsp" + "<strong>"+str(round(res['routes'][0]['summary']['distance']/1000,1))+" Km </strong>" +"</h4></b>"
+folium.GeoJson(decoded).add_child(folium.Popup(distance_txt,max_width=300)).add_to(m)
+
+folium.Marker(
+             location=list(coords[0][::-1]),
+            ).add_to(m)
+                               
+folium.Marker(
+               location=list(coords[1][::-1]),
+                    ).add_to(m)
+
+#---------------------------------------------------------------
+
+coords = (GPS[12],GPS[30])
+res = client.directions(coords)
+geometry = client.directions(coords)['routes'][0]['geometry']
+decoded = convert.decode_polyline(geometry)
+distance_txt = "<h4> <b>Distance :&nbsp" + "<strong>"+str(round(res['routes'][0]['summary']['distance']/1000,1))+" Km </strong>" +"</h4></b>"
+folium.GeoJson(decoded).add_child(folium.Popup(distance_txt,max_width=300)).add_to(m)
+
+folium.Marker(
+             location=list(coords[0][::-1]),
+             ).add_to(m)
+                               
+folium.Marker(
+               location=list(coords[1][::-1]),
+                    ).add_to(m)
+
+#---------------------------------------------------------------
+
+coords = (GPS[25],GPS[42])
+res = client.directions(coords)
+geometry = client.directions(coords)['routes'][0]['geometry']
+decoded = convert.decode_polyline(geometry)
+folium.GeoJson(decoded).add_child(folium.Popup(distance_txt,max_width=300)).add_to(m)
+
+folium.Marker(
+             location=list(coords[0][::-1]),).add_to(m)
+                               
+folium.Marker(
+               location=list(coords[1][::-1]),).add_to(m) 
+#------------------------------------------------------------------
+
+for i in range (N[0]):
+   tooltip = Ville[i]
+   folium.Marker(
+    [GPS[i][1],GPS[i][0]] ,popup="<strong>location One</strong>", tooltip=tooltip
+                    ).add_to(m)             
+m

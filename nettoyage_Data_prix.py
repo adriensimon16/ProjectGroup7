@@ -6,7 +6,7 @@ import seaborn as sns
 import pickle
 
 #lire la base de données 
-df=pd.read_csv('Data_prix.csv',sep=';')
+df = pd.read_csv('Data_prix.csv',sep=';')
 df
 
 # voir les valeurs manquantes
@@ -18,4 +18,3 @@ df.isnull().sum().sort_values(ascending=False)
 #calculer le min, max, la moyenne .......
 df.describe()
 
-# Pour compléter le nettoyage on doit suprimer ( ou remplir) les valeurs monquantes 

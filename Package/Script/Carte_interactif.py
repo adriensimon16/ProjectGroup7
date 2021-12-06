@@ -8,7 +8,7 @@ import openrouteservice
 import json
 from ipywidgets import interact
 #%%
-# importer la base de données coordonnees.csv
+# importer la base de données Base.csv
 url = 'https://raw.githubusercontent.com/SENEAssane/ProjectGroup7/main/Package/Data/Base.csv'
 path = os.path.join(os.getcwd(),'Base.csv')
 download(url, path, replace=True)
@@ -68,14 +68,14 @@ def itineraire(DEPART, ARRIVEE):
 
                 folium.Marker(
                             coord[0][::-1],
-                            popup="<strong>location One</strong>",
-                            tooltip=DEPART
+                            popup = "<strong>location One</strong>",
+                            tooltip = DEPART
                              ).add_to(m)
 
                 folium.Marker(
                             coord[1][::-1],
-                            popup="<strong>location One</strong>",
-                            tooltip=ARRIVEE
+                            popup = "<strong>location One</strong>",
+                            tooltip = ARRIVEE
                              ).add_to(m)
         return m
 
@@ -112,14 +112,14 @@ def itineraire(DEPART, ARRIVEE):
 
                 folium.Marker(
                             coord[0][::-1],
-                            popup="<strong>location One</strong>",
-                            tooltip=ARRIVEE 
+                            popup = "<strong>location One</strong>",
+                            tooltip = ARRIVEE 
                              ).add_to(m)
 
                 folium.Marker(
                             coord[1][::-1],
-                            popup="<strong>location One</strong>",
-                            tooltip=DEPART
+                            popup = "<strong>location One</strong>",
+                            tooltip = DEPART
                              ).add_to(m)
                      
         return m
@@ -127,6 +127,6 @@ def itineraire(DEPART, ARRIVEE):
     else :
         print("Veuilliez entrer deux sorties différentes")  
 
+# Affichage de la carte avec la fonction interact
 interact(itineraire, DEPART = villes, ARRIVEE = villes)
 
-# %%

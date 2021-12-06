@@ -9,7 +9,10 @@ import requests
 import json
 #%%
 # Importer la base de données 
-data = pd.read_csv("Base.csv")
+url = 'https://raw.githubusercontent.com/SENEAssane/ProjectGroup7/main/Package/Data/Base.csv'
+path = os.path.join(os.getcwd(),'Base.csv')
+download(url, path, replace=True)
+data = pd.read_csv('./Base.csv')
 X = data['X']
 Y = data['Y']
 

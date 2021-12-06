@@ -1,4 +1,5 @@
 #%%
+# Importation des packages 
 from download import download
 import os
 import pandas as pd
@@ -7,22 +8,19 @@ import matplotlib.pyplot as plt
 import requests
 import json
 #%%
+
 #Partie de calcul des coordonnées de chaque sortie
 
 data = pd.read_csv("coordonnées.csv")
-
-
-X=data['X']
-Y=data['Y']
-
-# %%
-GPS=[] 
+X = data['X']
+Y = data['Y']
+# Création d'une vecteur qui contient les coordonées GPS  
+GPS = [] 
 for i in range (len(data)):
  GPS.append((X[i],Y[i]))
 
 # %%
-
-
+# Le calcul du vecteur distance 
 dist = []
 for i in range (len(GPS)):
   if i-1 < 0:
@@ -37,6 +35,9 @@ for i in range (len(GPS)):
   routes =json.loads(r.content)
   route_1 = routes.get("routes")[0]
   dist.append(round(route_1['distance']/1000))
+  
+print(dist)
+
 
 # %%
 ######################################
@@ -48,17 +49,27 @@ from itertools import combinations
 import networkx as nx
 from ipywidgets import interact
 
+# Lecture de la base de données Data_prix 
+data_prix=pd.read_csv('Data_prix.csv')
+
+def functOpti(entree,sortie,nbdeinout):
+   return 
+ 
+# %%
+# Algorithme d'optimisation des prix des routes
+
+
 prix=pd.read_csv("Data_prix.csv")
 
 S  = [0,1,2,3,4,6,7,8,9,10,11,12,13,14
 ,15,16,19,20,21,22,23,24,25,26,27
 ,29,30,31,33,35,36,37,38,39,40,41,42]
 
-P0 = [[0,1,2,3,4,6,7,8,9,10,11],[1,2],[]] #A9 1e partie
-P1 = [[12,13,14,15,16,19],[],[0,2]] #A9 2e partie
-P2 = [[20,21,22,23,24,25],[3,4],[0,1]] #A61 1e partie
-P3 = [[26,27,29,30],[],[2,4]] #A66
-P4 = [[31,33,35,36,37,38,39,40,41,42],[],[2,3]] #reste A61+A62
+P0 = [[0,1,2,3,4,6,7,8,9,10,11],[1,2],[]]         #A9 1e partie
+P1 = [[12,13,14,15,16,19],[],[0,2]]               #A9 2e partie
+P2 = [[20,21,22,23,24,25],[3,4],[0,1]]            #A61 1e partie
+P3 = [[26,27,29,30],[],[2,4]]                     #A66
+P4 = [[31,33,35,36,37,38,39,40,41,42],[],[2,3]]   #reste A61+A62
 
 P = [P0,P1,P2,P3,P4]
 
@@ -74,6 +85,7 @@ def position(y):
       if y ==P[portion(y)][0][i]:
          return i
 
+
 #%%
 def nbSorties(A,B):
    '''Cette fonction calcule quelles sorties se trouvent entre le point d'entrée et le point de sortie de l'autoroute choisis. 
@@ -81,6 +93,14 @@ def nbSorties(A,B):
    a=min(A,B)
    b=max(A,B)
    traj=[]
+
+
+#%%
+def nbSorties(A,B):
+   a = min(A,B)
+   b = max(A,B)
+   traj = []
+
    if (A == 29 and B==30):
       return "vous ne pouvez pas entrer sur l'autoroute dans ce sens à la sortie Pamier Nord"
    if (A == 30 and B==29):
@@ -122,7 +142,6 @@ def nbSorties(A,B):
       traj.reverse()
 
    return traj
-
 
 
 

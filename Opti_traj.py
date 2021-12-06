@@ -1,5 +1,4 @@
 #%%
-# Importation des packages 
 from download import download
 import os
 import pandas as pd
@@ -8,17 +7,22 @@ import matplotlib.pyplot as plt
 import requests
 import json
 #%%
-#Lecture de la base de données coordonnées 
+#Partie de calcul des coordonnées de chaque sortie
+
 data = pd.read_csv("coordonnées.csv")
-X = data['X']
-Y = data['Y']
-# Création d'une vecteur qui contient les coordonées GPS  
-GPS = [] 
+
+
+X=data['X']
+Y=data['Y']
+
+# %%
+GPS=[] 
 for i in range (len(data)):
  GPS.append((X[i],Y[i]))
 
 # %%
-# Le calcul du vecteur distance 
+
+
 dist = []
 for i in range (len(GPS)):
   if i-1 < 0:
@@ -33,11 +37,16 @@ for i in range (len(GPS)):
   routes =json.loads(r.content)
   route_1 = routes.get("routes")[0]
   dist.append(round(route_1['distance']/1000))
-  
+
 # %%
-#Partie Algo:
+######################################
+#la portion de code suivante traite de l'optimisation du trajet 
+
+######################################
+
 from itertools import combinations
 import networkx as nx
+from ipywidgets import interact
 
 prix=pd.read_csv("Data_prix.csv")
 
@@ -124,13 +133,11 @@ def nbSorties(A,B):
 def transformN(a):
    '''Cette fonction permet de passer du nom de la sortie sous forme de string à son index dans le tableau des prix'''
    
+   if a in ['Peage de Montpellier St-Jean','Peage du Perthus','Le Boulou (peage sys ouvert)','Peage de pamiers','Peage de Toulouse sud/ouest','Peage de Toulouse sud/est']:
+      return "Cette sortie n'est pas valide"
    for i in range (len(prix.columns)):
       if  a ==prix.columns[i]:
-         
-         if i in [5,17,18,28,32,34]:
-            return "Cette sortie n'est pas valide"
          return i-1
-      
    
    return "Cette sortie n'est pas valide"
       
@@ -212,11 +219,9 @@ def Finale(A,B,k):
    if a[1]==1000.0:
       return "Veuillez verifier que le trajet que vous avez prévu est un trajet valide"
    
-      
+   a[1]=round(a[1],2)
    return a
       
 
 # %%
-
-
 

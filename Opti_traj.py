@@ -220,6 +220,7 @@ def Finale(A,B,k):
       return "Veuillez verifier que le trajet que vous avez prévu est un trajet valide"
    
    a[1]=round(a[1],2)
+   
    return a
       
 

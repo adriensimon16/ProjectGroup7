@@ -18,15 +18,15 @@ download(url, path, replace=True)
 prix = pd.read_csv('./dataprixnettoye.csv')
 #%%
 def test_transformN():
-    assert transformN('Le palays')==33 and transformN('Vendargues')==0
+    assert transformN('Le palays')==28 and transformN('Vendargues')==0
 
 #%%
 def test_transformNum():
-    assert transformNum(42)=='Sesquieres' and transformNum(5)=='Peage de Montpellier St-Jean'
+    assert transformNum(36)=='Sesquieres' 
 
 # %%
 def test_prixab():
-    assert prixab(12,37)==15.6
+    assert prixab(13,6)==9.5
 
 
 # %%

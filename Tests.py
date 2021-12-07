@@ -12,6 +12,7 @@ from Opti_traj import *
 #%%
 #Nous allons tester nos fonctions avec des cas particuliers notamment les sorties "problématiques" 
 #comme Pamiers Nord ou les sorties aux extremités du réseau d'autoroutes.
+
 url = 'https://raw.githubusercontent.com/SENEAssane/ProjectGroup7/main/Package/Data/dataprixnettoye.csv'
 path = os.path.join(os.getcwd(),'dataprixnettoye.csv')
 download(url, path, replace=True)
@@ -31,7 +32,7 @@ def test_prixab():
 
 # %%
 def test_Finale():
-    assert Finale(7,22,4)==[['Agde Pezenas','Beziers ouest','Lezignan','Carcassone est','Carcassone ouest'],7.9,3]
+    assert Finale(7,22,4) == [['Agde Pezenas','Beziers ouest','Lezignan','Carcassone est','Carcassone ouest'],7.9,3]
 
 # %%
 

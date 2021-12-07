@@ -38,7 +38,7 @@ for i in range (len(GPS)):
   route_1 = routes.get("routes")[0]
   dist.append(round(route_1['distance']/1000))
 
-# %%
+#%%
 ######################################
 #la portion de code suivante traite de l'optimisation du trajet 
 
@@ -48,75 +48,80 @@ from itertools import combinations
 import networkx as nx
 from ipywidgets import interact
 
-prix=pd.read_csv("Data_prix.csv")
 
-S  = [0,1,2,3,4,6,7,8,9,10,11,12,13,14
-,15,16,19,20,21,22,23,24,25,26,27
-,29,30,31,33,35,36,37,38,39,40,41,42]
-
-P0 = [[0,1,2,3,4,6,7,8,9,10,11],[1,2],[]] #A9 1e partie
-P1 = [[12,13,14,15,16,19],[],[0,2]] #A9 2e partie
-P2 = [[20,21,22,23,24,25],[3,4],[0,1]] #A61 1e partie
-P3 = [[26,27,29,30],[],[2,4]] #A66
-P4 = [[31,33,35,36,37,38,39,40,41,42],[],[2,3]] #reste A61+A62
+url = 'https://raw.githubusercontent.com/SENEAssane/ProjectGroup7/main/Package/Data/dataprixnettoye.csv'
+path = os.path.join(os.getcwd(),'dataprixnettoye.csv')
+download(url, path, replace=True)
+prix = pd.read_csv('./dataprixnettoye.csv')
+#%%
+S  = []
+for i in range(37):
+   S.append(i)
+#%%  
+P0 = [[0,1,2,3,4,5,6,7,8,9,10],[1,2],[]] #A9 1e partie
+P1 = [[11,12,13,14,15,16],[],[0,2]] #A9 2e partie
+P2 = [[17,18,19,20,21,22],[3,4],[0,1]] #A61 1e partie
+P3 = [[23,24,25,26],[],[2,4]] #A66
+P4 = [[27,28,29,30,31,32,33,34,35,36],[],[2,3]] #reste A61+A62
 
 P = [P0,P1,P2,P3,P4]
-
-def portion(x):
-   '''Cette fonction donne la portion de route dans laquelle se trouve une sortie 'x' elle prend un entier en entrée'''
-   for i in range(len(P)):
-      if x in P[i][0]:
-         return i
+class test:
+   def __init__(self) -> None:
+      pass
+   def portion(x):
+      '''Cette fonction donne la portion de route dans laquelle se trouve une sortie 'x' elle prend un entier en entrée'''
+      for i in range(len(P)):
+         if x in P[i][0]:
+            return i
 
 def position(y):
-   '''Cette fonction donne la position à l'interieur de la portion de route correspondante de la sortie 'y'. Elle prend un entier en entrée'''
-   for i in range(len(P[portion(y)][0])):
-      if y ==P[portion(y)][0][i]:
-         return i
+  '''Cette fonction donne la position à l'interieur de la portion de route correspondante de la sortie 'y'. Elle prend un entier en entrée'''
+  for i in range(len(P[test.portion(y)][0])):
+     if y == P[test.portion(y)][0][i]:
+        return i
 
-#%%
 def nbSorties(A,B):
    '''Cette fonction calcule quelles sorties se trouvent entre le point d'entrée et le point de sortie de l'autoroute choisis. 
    Elle prend en argument les indices du point d'entrée et du point de sortie.'''
-   a=min(A,B)
-   b=max(A,B)
-   traj=[]
-   if (A == 29 and B==30):
+   a = min(A,B)
+   b = max(A,B)
+   traj = []
+   if (A == 25 and B==26):
       return "vous ne pouvez pas entrer sur l'autoroute dans ce sens à la sortie Pamier Nord"
-   if (A == 30 and B==29):
+   if (A == 26 and B==25):
       return "vous ne pouvez pas sortir de l'autoroute dans ce sens à la sortie Pamier Nord"
 
-   if portion(a)==portion(b):
+   if test.portion(a)==test.portion(b):
       for i in range(position(a),position(b)+1):
-         traj.append(P[portion(b)][0][i])
+         traj.append(P[test.portion(b)][0][i])
       if A>B:
          traj.reverse()
 
       return traj
 
-   if portion(b) in P[portion(a)][1]:
-      for i in range(position(a),len(P[portion(a)][0])):
-         traj.append(P[portion(a)][0][i]) 
+   if test.portion(b) in P[test.portion(a)][1]:
+      for i in range(position(a),len(P[test.portion(a)][0])):
+         traj.append(P[test.portion(a)][0][i]) 
 
-   if portion(b) in P[portion(a)][2]:
+   if test.portion(b) in P[test.portion(a)][2]:
       for i in range(0,position(a)+1):
-         traj.append(P[portion(a)][0][(position(a))-i])
+         traj.append(P[test.portion(a)][0][(position(a))-i])
       
 
-   if (portion(b) in P[portion(a)][2])==False and (portion(b) in P[portion(a)][1])==False:
-      if 2 in P[portion(a)][1]:
-         for i in range(position(a),len(P[portion(a)][0])):
-            traj.append(P[portion(a)][0][i])
+   if (test.portion(b) in P[test.portion(a)][2])==False and (test.portion(b) in P[test.portion(a)][1])==False:
+      if 2 in P[test.portion(a)][1]:
+         for i in range(position(a),len(P[test.portion(a)][0])):
+            traj.append(P[test.portion(a)][0][i])
          
-      if 2 in P[portion(a)][2]: 
+      if 2 in P[test.portion(a)][2]: 
          for i in range(0,position(a)+1):
-            traj.append(P[portion(a)][0][(position(a))-i])
+            traj.append(P[test.portion(a)][0][(position(a))-i])
 
       for i in range(len(P[2][0])):
          traj.append(P[2][0][i])
 
    for j in range(0,(position(b)+1)):
-       traj.append(P[portion(b)][0][j]) 
+       traj.append(P[test.portion(b)][0][j]) 
 
    if A>B:
       traj.reverse()
@@ -125,62 +130,45 @@ def nbSorties(A,B):
 
 
 
-
-
-# %%
-
-
 def transformN(a):
    '''Cette fonction permet de passer du nom de la sortie sous forme de string à son index dans le tableau des prix'''
    
    if a in ['Peage de Montpellier St-Jean','Peage du Perthus','Le Boulou (peage sys ouvert)','Peage de pamiers','Peage de Toulouse sud/ouest','Peage de Toulouse sud/est']:
       return "Cette sortie n'est pas valide"
    for i in range (len(prix.columns)):
-      if  a ==prix.columns[i]:
+      if  a == prix.columns[i]:
          return i-1
    
    return "Cette sortie n'est pas valide"
       
 def transformNum(a):
    '''Cette fonction fait l'opération inverse de la fonction précédente'''
-
    return prix.columns[a+1]
-
 #%%
-
 def prixab(a,b):
    '''Cette fonction permet de calculer le prix entre deux sorties données, à partir du tableau des prix'''
-   return (prix.iloc[a][b])
-
-
-
-
-
-  
-#%%
-
+   return (prix.iloc[a][b+1])
 
 def march(A,B,k):
    '''Cette fonction permet de lister toutes les combinaisons de k sorties entre des sorties d'autoroutes données en entrée.
    Elle prend donc en arguments l'index du point d'entrée sur l'autoroute, l'index du point de sortie et le nombre exact de sorties intermédiaires que l'on souhaite effectuer.'''
-   L=[]
+   L = []
    for i in (combinations(nbSorties(A,B),k+2)):
       if list(i)[0]==A and list(i)[-1]==B:
          L.append(list(i))
 
    return L
-#%%
 
 def prixopt(A):
    '''Cette fonction calcule le prix le moins chère, pour un trajet entre deux sorties d'autoroute en exactement k sorties intermédiaires.
    Elle prend en argument une liste de listes.
    Nous l'avons utilisée en complément de la fonction march pour obtenir le résultat souhaité.'''
-   L=[]
-   somm1=1000.0
-   somm2=0.0
+   L = []
+   somm1 = 1000.0
+   somm2 = 0.0
    for i in range(len(A)):
       for j in range(len(A[i])-1):
-         somm2+=prix.iloc[A[i][j],A[i][j+1]]
+         somm2+=prixab(A[i][j],A[i][j+1])
       if somm2<somm1 :
          somm1=somm2
          somm2=0.0
@@ -189,17 +177,14 @@ def prixopt(A):
          somm2=0.0
    return [L,somm1]
 
-#%%
-
-
 
 def Finale(A,B,k):
    '''Cette fonction permet de calculer le trajet le moins cher entre deux sorties d'autoroute avec au maximum k sorties intermédiaires.
    Nous l'avons utilisée en combinaison avec les fonctions prixopt et march.
    Elle prend en entrée l'index du point d'entrée sur l'autoroute, l'index du point de sortie et k : le nombre maximum de sorties intermédiaires autorisées.
    Cette fonction retourne la liste des sorties qui minimisent le coût du trajet, le prix que coûtera le trajet en sortant aux sorties indiquées et le nombre de sorties intermédiaires recommandées.'''
-   L=[]
-   b=B
+   L = []
+   b = B
    if A==B:
       return "Vous devez choisir une sortie différente de votre point d'entrée"
    if B==0:
@@ -220,9 +205,9 @@ def Finale(A,B,k):
       return "Veuillez verifier que le trajet que vous avez prévu est un trajet valide"
    
    a[1]=round(a[1],2)
-   
+
    return a
-      
+
 
 # %%
 

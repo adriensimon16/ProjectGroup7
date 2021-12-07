@@ -53,9 +53,9 @@ Les tâches intermédiaires seront traitées en commun par nous tous, selon la p
 
 
 
-Assane s'occupera de la carte et ses interfaces
+Abderrahim s'occupera de la carte et ses interfaces
 
-Abderrahim s'occupera des distributions des prix
+Assane s'occupera des distributions des prix
 
 Adrien s'occupera de l'algorithme d'optimisation de trajet
 

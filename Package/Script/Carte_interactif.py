@@ -22,7 +22,7 @@ path = os.path.join(os.getcwd(),'Datadistance.csv')
 download(ur1, path, replace=True)
 Dist = pd.read_csv('./Datadistance.csv')
 
-# importer la base de données Data_distance.csv
+# importer la base de données dataprixnettoye.csv
 ur1 = 'https://raw.githubusercontent.com/SENEAssane/ProjectGroup7/main/Package/Data/dataprixnettoye.csv'
 path = os.path.join(os.getcwd(),'dataprixnettoye.csv')
 download(ur1, path, replace=True)

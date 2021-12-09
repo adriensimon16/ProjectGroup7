@@ -1,4 +1,5 @@
 #%%
+# Importer les packages 
 from itertools import combinations
 from download import download
 import os
@@ -34,5 +35,10 @@ def test_prixab():
 def test_Finale():
     assert Finale(7,22,4) == [['Agde Pezenas','Beziers ouest','Lezignan','Carcassone est','Carcassone ouest'],7.9,3]
 
+# %%
+def test_Distab():
+    assert Distab(9,12)==31.0
+    
+    
 # %%
 

@@ -35,8 +35,6 @@ for i in range (len(GPS)):
   routes =json.loads(r.content)
   route_1 = routes.get("routes")[0]
   dist.append(round(route_1['distance']/1000))
-  
-print(dist)
 
 
 #%%

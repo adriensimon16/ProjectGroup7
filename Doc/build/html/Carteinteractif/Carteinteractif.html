@@ -1,0 +1,445 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="FR" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>objectif &mdash; Documentation Projet Groupe 7 </title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/fonts.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/translations.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Recherche" href="../search.html" />
+    <link rel="next" title="Partie Algorithme d’optimisation" href="../OptimisationTrajet/Optimisation.html" />
+    <link rel="prev" title="Autoroutes du Sud-Ouest de la France" href="../index.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Projet Groupe 7
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption" role="heading"><span class="caption-text">Carte interactive</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">objectif</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#importer-les-bibliotheques-requises">Importer les bibliothèques requises</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#lecture-des-bases-de-donnees">Lecture des bases de données</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#etape-requises">Etape requises</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#tracer-des-itineraires">Tracer des itinéraires</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#widgets">Widgets</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Optimisation du trajet</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../OptimisationTrajet/Optimisation.html">Partie Algorithme d’optimisation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../OptimisationTrajet/Optimisation.html#exemple-d-utilisation">Exemple d’utilisation</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">KDE de Distribution des prix</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Distributionprix/Distributionprix.html">Kernel Density Estimation (KDE)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Distributionprix/Distributionprix.html#packages-necessaires-pour-le-travail">Packages necessaires pour le travail</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Distributionprix/Distributionprix.html#kde-du-dataframe-des-prix-par-km">KDE du dataframe des prix par km</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Projet Groupe 7</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+<div class="git-ribbon">
+  <a href="http://github.com/SwissDataScienceCenter" rel="me">Join us on GitHub</a>
+</div>
+
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>objectif</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/Carteinteractif/Carteinteractif.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="objectif">
+<h1>objectif<a class="headerlink" href="#objectif" title="Lien permanent vers ce titre">¶</a></h1>
+<p>L’objectif principal de cette partie est de créer une carte interactive avec le package <code class="docutils literal notranslate"><span class="pre">folium</span></code> afin
+d’afficher l’itinéraire, la distance, le prix ainsi que le prix par kilomètre entre deux gares données par l’utilisateur.</p>
+<div class="figure align-center">
+<a class="with-shadow reference internal image-reference" href="../_images/Carte.gif"><img alt="Carte" class="with-shadow" src="../_images/Carte.gif" style="width: 570.0px; height: 332.5px;" /></a>
+</div>
+</div>
+<div class="section" id="importer-les-bibliotheques-requises">
+<h1>Importer les bibliothèques requises<a class="headerlink" href="#importer-les-bibliotheques-requises" title="Lien permanent vers ce titre">¶</a></h1>
+<p>Comme nous continuons avec le langage Python, nous pouvons simplement exécuter</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="kn">from</span> <span class="nn">download</span> <span class="kn">import</span> <span class="n">download</span>
+<span class="linenos">2</span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="linenos">3</span><span class="kn">import</span> <span class="nn">folium</span>
+<span class="linenos">4</span><span class="kn">from</span> <span class="nn">openrouteservice</span> <span class="kn">import</span> <span class="n">convert</span>
+<span class="linenos">5</span><span class="kn">import</span> <span class="nn">openrouteservice</span>
+<span class="linenos">6</span><span class="kn">import</span> <span class="nn">json</span>
+<span class="linenos">7</span><span class="kn">from</span> <span class="nn">ipywidgets</span> <span class="kn">import</span> <span class="n">interact</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="lecture-des-bases-de-donnees">
+<h1>Lecture des bases de données<a class="headerlink" href="#lecture-des-bases-de-donnees" title="Lien permanent vers ce titre">¶</a></h1>
+<div class="admonition warning">
+<p class="admonition-title">Avertissement</p>
+<ul class="simple">
+<li><p>L’importation de la base de données « Base.csv » qui contient les noms des gares ainsi que leurs coordonnées GPS.</p></li>
+</ul>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;https://raw.githubusercontent.com/SENEAssane/ProjectGroup7/main/Package/Data/Base.csv&#39;</span>
+<span class="linenos">2</span><span class="n">path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">(),</span><span class="s1">&#39;Base.csv&#39;</span><span class="p">)</span>
+<span class="linenos">3</span><span class="n">download</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">path</span><span class="p">,</span> <span class="n">replace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="linenos">4</span><span class="n">geo</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;./Base.csv&#39;</span><span class="p">)</span>
+<span class="linenos">5</span><span class="n">geo</span> <span class="o">=</span> <span class="n">geo</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39; NOMGARE &#39;</span><span class="p">:</span><span class="s1">&#39;NOM GARE&#39;</span><span class="p">})</span>
+</pre></div>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Avertissement</p>
+<ul class="simple">
+<li><p>L’importation de la base de données « dataprixnettoye.csv » qui contient les prix d’autoroutes entre toutes les gares de notre carte après le nettoyage.</p></li>
+</ul>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="n">ur1</span> <span class="o">=</span> <span class="s1">&#39;https://raw.githubusercontent.com/SENEAssane/ProjectGroup7/main/Package/Data/dataprixnettoye.csv&#39;</span>
+<span class="linenos">2</span><span class="n">path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">(),</span><span class="s1">&#39;dataprixnettoye.csv&#39;</span><span class="p">)</span>
+<span class="linenos">3</span><span class="n">download</span><span class="p">(</span><span class="n">ur1</span><span class="p">,</span> <span class="n">path</span><span class="p">,</span> <span class="n">replace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="linenos">4</span><span class="n">prix</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;./dataprixnettoye.csv&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Avertissement</p>
+<ul class="simple">
+<li><p>L’importation de la base de données « Datadistance.csv » qui contient les distances d’autoroutes entre toutes les gares de notre carte.</p></li>
+</ul>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="n">ur1</span> <span class="o">=</span> <span class="s1">&#39;https://raw.githubusercontent.com/SENEAssane/ProjectGroup7/main/Package/Data/Datadistance.csv&#39;</span>
+<span class="linenos">2</span><span class="n">path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">(),</span><span class="s1">&#39;Datadistance.csv&#39;</span><span class="p">)</span>
+<span class="linenos">3</span><span class="n">download</span><span class="p">(</span><span class="n">ur1</span><span class="p">,</span> <span class="n">path</span><span class="p">,</span> <span class="n">replace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="linenos">4</span><span class="n">Dist</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;./Datadistance.csv&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="etape-requises">
+<h1>Etape requises<a class="headerlink" href="#etape-requises" title="Lien permanent vers ce titre">¶</a></h1>
+<div class="admonition warning">
+<p class="admonition-title">Avertissement</p>
+<ul class="simple">
+<li><p>Cette fonction permet de calculer la distance entre deux gares données, à partir de la base de données « Datadistance.csv ».</p></li>
+</ul>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">Distab</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">):</span>
+<span class="k">return</span> <span class="p">(</span><span class="n">Dist</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">a</span><span class="p">][</span><span class="n">b</span><span class="o">+</span><span class="mi">1</span><span class="p">])</span>
+</pre></div>
+</div>
+<blockquote class="sphx-glr-script-out">
+<div><table class="colwidths-given docutils align-default" id="id1">
+<caption><span class="caption-text">Exemple</span><a class="headerlink" href="#id1" title="Lien permanent vers ce tableau">¶</a></caption>
+<colgroup>
+<col style="width: 100%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>input : Les indices des deux gares (4,25)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>output : La distance entre les deux gares 242.0 km</p></td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<div class="sphx-glr-script-out highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;&gt;</span> <span class="n">Distab</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">25</span><span class="p">)</span>
+<span class="o">&gt;&gt;</span> <span class="mf">242.0</span>
+</pre></div>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Avertissement</p>
+<ul class="simple">
+<li><p>Cette fonction permet de calculer le prix entre deux gares données, à partir de la base de donnée « dataprixnettoye.csv ».</p></li>
+</ul>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">prixab</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">):</span>
+<span class="k">return</span> <span class="p">(</span><span class="n">prix</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">a</span><span class="p">][</span><span class="n">b</span><span class="o">+</span><span class="mi">1</span><span class="p">])</span>
+</pre></div>
+</div>
+<blockquote class="sphx-glr-script-out">
+<div><table class="colwidths-given docutils align-default" id="id2">
+<caption><span class="caption-text">Exemple</span><a class="headerlink" href="#id2" title="Lien permanent vers ce tableau">¶</a></caption>
+<colgroup>
+<col style="width: 100%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>input : Les indices des deux gares (4,25)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>output : Le prix entre les deux gares 23.7 €</p></td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<div class="sphx-glr-script-out highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;&gt;</span> <span class="n">prixab</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">25</span><span class="p">)</span>
+<span class="o">&gt;&gt;</span> <span class="mf">23.7</span>
+</pre></div>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Avertissement</p>
+<ul class="simple">
+<li><p>création d’une liste qui contient les noms de toutes les gares de notre carte.</p></li>
+</ul>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">villes</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">geo</span><span class="o">.</span><span class="n">NOMGARE</span><span class="o">.</span><span class="n">unique</span><span class="p">())</span>
+</pre></div>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Avertissement</p>
+<ul class="simple">
+<li><p>Ce code nous permettant de passer du nom du gare (par exemple « MONTPELLIER EST ») à son index dans la base de données geo.</p></li>
+</ul>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">i</span> <span class="o">=</span> <span class="n">geo</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">geo</span><span class="p">[</span><span class="s1">&#39;NOMGARE&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;MONTPELLIER EST&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">index</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="tracer-des-itineraires">
+<h1>Tracer des itinéraires<a class="headerlink" href="#tracer-des-itineraires" title="Lien permanent vers ce titre">¶</a></h1>
+<ul class="simple">
+<li><p>Pour afficher la carte interactive du Sud-Ouest de la France nous avons utiliser le code suivant.</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">client</span> <span class="o">=</span> <span class="n">openrouteservice</span><span class="o">.</span><span class="n">Client</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="s1">&#39;........&#39;</span><span class="p">)</span>
+<span class="n">m</span> <span class="o">=</span> <span class="n">folium</span><span class="o">.</span><span class="n">Map</span><span class="p">(</span><span class="n">location</span><span class="o">=</span><span class="p">[</span><span class="mf">43.654448</span><span class="p">,</span><span class="mf">3.992643</span><span class="p">],</span><span class="n">zoom_start</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">control_scale</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">m</span>
+</pre></div>
+</div>
+<div class="figure align-center">
+<a class="with-shadow reference internal image-reference" href="../_images/Carte_vide.png"><img alt="Carte" class="with-shadow" src="../_images/Carte_vide.png" style="width: 450.0px; height: 262.5px;" /></a>
+</div>
+<p>Vous pouvez changer le paramètre <code class="docutils literal notranslate"><span class="pre">location</span></code> par les coordonner GPS de votre propre carte, et pour configurer le client openrouteservice avec
+la clé api (<code class="docutils literal notranslate"><span class="pre">key</span></code>) , vous pouvez vous inscrire sur <a class="reference external" href="https://openrouteservice.org">https://openrouteservice.org</a> si vous n’avez pas de clé API. C’est totalement gratuit</p>
+<ul class="simple">
+<li><p>Pour afficher deux points sur la carte on utiliser le code suivant, par exemple les points de coordonner : (3.415880824819294, 43.37686025015687) et (3.875141, 43.573942)</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">coords</span> <span class="o">=</span> <span class="p">((</span><span class="mf">3.415880824819294</span><span class="p">,</span> <span class="mf">43.37686025015687</span><span class="p">),(</span><span class="mf">3.875141</span><span class="p">,</span> <span class="mf">43.573942</span><span class="p">))</span>
+<span class="n">folium</span><span class="o">.</span><span class="n">Marker</span><span class="p">(</span>
+       <span class="n">location</span><span class="o">=</span><span class="nb">list</span><span class="p">(</span><span class="n">coords</span><span class="p">[</span><span class="mi">0</span><span class="p">][::</span><span class="o">-</span><span class="mi">1</span><span class="p">]),)</span><span class="o">.</span><span class="n">add_to</span><span class="p">(</span><span class="n">m</span><span class="p">)</span>
+<span class="n">folium</span><span class="o">.</span><span class="n">Marker</span><span class="p">(</span>
+         <span class="n">location</span><span class="o">=</span><span class="nb">list</span><span class="p">(</span><span class="n">coords</span><span class="p">[</span><span class="mi">1</span><span class="p">][::</span><span class="o">-</span><span class="mi">1</span><span class="p">]))</span><span class="o">.</span><span class="n">add_to</span><span class="p">(</span><span class="n">m</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="figure align-center">
+<a class="with-shadow reference internal image-reference" href="../_images/Carte_2_point.png"><img alt="Carte" class="with-shadow" src="../_images/Carte_2_point.png" style="width: 450.0px; height: 262.5px;" /></a>
+</div>
+<ul class="simple">
+<li><p>Comme notre objectif est de tracer la route entre des points donnés, nous pourrions utiliser l’attribut de géométrie des routes.</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">geometry</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">directions</span><span class="p">(</span><span class="n">coords</span><span class="p">)[</span><span class="s1">&#39;routes&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;geometry&#39;</span><span class="p">]</span>
+<span class="n">decoded</span> <span class="o">=</span> <span class="n">convert</span><span class="o">.</span><span class="n">decode_polyline</span><span class="p">(</span><span class="n">geometry</span><span class="p">)</span>
+<span class="n">folium</span><span class="o">.</span><span class="n">GeoJson</span><span class="p">(</span><span class="n">decoded</span><span class="p">)</span><span class="o">.</span><span class="n">add_child</span><span class="p">(</span><span class="n">folium</span><span class="o">.</span><span class="n">Popup</span><span class="p">(</span><span class="n">max_width</span><span class="o">=</span><span class="mi">300</span><span class="p">))</span><span class="o">.</span><span class="n">add_to</span><span class="p">(</span><span class="n">m</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="figure align-center">
+<a class="with-shadow reference internal image-reference" href="../_images/Carte_iti.png"><img alt="Carte" class="with-shadow" src="../_images/Carte_iti.png" style="width: 450.0px; height: 262.5px;" /></a>
+</div>
+<ul class="simple">
+<li><p>Pour ajouter le texte de la fenêtre contextuelle lorsque nous cliquons sur l’itinéraire.</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">distance_txt</span> <span class="o">=</span> <span class="s2">&quot;&lt;h4&gt; &lt;b&gt;Distance :&amp;nbsp&quot;</span> <span class="o">+</span> <span class="s2">&quot;&lt;strong&gt;&quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">res</span><span class="p">[</span><span class="s1">&#39;routes&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;summary&#39;</span><span class="p">][</span><span class="s1">&#39;distance&#39;</span><span class="p">]</span><span class="o">/</span><span class="mi">1000</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span><span class="o">+</span><span class="s2">&quot; Km &lt;/strong&gt;&quot;</span> <span class="o">+</span><span class="s2">&quot;&lt;/h4&gt;&lt;/b&gt;&quot;</span>
+<span class="n">prix_txt</span> <span class="o">=</span> <span class="s2">&quot;&lt;h4&gt; &lt;b&gt;Prix :&amp;nbsp&quot;</span> <span class="o">+</span> <span class="s2">&quot;&lt;strong&gt;&quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">pr</span><span class="p">)</span><span class="o">+</span><span class="s2">&quot; € &lt;/strong&gt;&quot;</span> <span class="o">+</span><span class="s2">&quot;&lt;/h4&gt;&lt;/b&gt;&quot;</span>
+<span class="n">prix_moy_txt</span> <span class="o">=</span> <span class="s2">&quot;&lt;h4&gt; &lt;b&gt;Prix Moyen par KM :&amp;nbsp&quot;</span> <span class="o">+</span> <span class="s2">&quot;&lt;strong&gt;&quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">moy</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span><span class="o">+</span><span class="s2">&quot; € &lt;/strong&gt;&quot;</span> <span class="o">+</span><span class="s2">&quot;&lt;/h4&gt;&lt;/b&gt;&quot;</span>
+<span class="n">folium</span><span class="o">.</span><span class="n">GeoJson</span><span class="p">(</span><span class="n">decoded</span><span class="p">)</span><span class="o">.</span><span class="n">add_child</span><span class="p">(</span><span class="n">folium</span><span class="o">.</span><span class="n">Popup</span><span class="p">(</span><span class="n">distance_txt</span><span class="o">+</span><span class="n">prix_txt</span><span class="o">+</span><span class="n">prix_moy_txt</span><span class="p">,</span><span class="n">max_width</span> <span class="o">=</span> <span class="mi">300</span><span class="p">))</span><span class="o">.</span><span class="n">add_to</span><span class="p">(</span><span class="n">m</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="figure align-center">
+<a class="with-shadow reference internal image-reference" href="../_images/Carte_prix_dist.png"><img alt="Carte" class="with-shadow" src="../_images/Carte_prix_dist.png" style="width: 450.0px; height: 262.5px;" /></a>
+</div>
+</div>
+<div class="section" id="widgets">
+<h1>Widgets<a class="headerlink" href="#widgets" title="Lien permanent vers ce titre">¶</a></h1>
+<div class="admonition warning">
+<p class="admonition-title">Avertissement</p>
+<p>Pour la création de Widgets nous avons utiliser la fonction <code class="docutils literal notranslate"><span class="pre">interact</span></code> du package <code class="docutils literal notranslate"><span class="pre">ipywidgets</span></code>.</p>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Affichage de la carte avec la fonction interact</span>
+<span class="n">interact</span><span class="p">(</span><span class="n">itineraire</span><span class="p">,</span> <span class="n">DEPART</span> <span class="o">=</span> <span class="n">villes</span><span class="p">,</span> <span class="n">ARRIVEE</span> <span class="o">=</span> <span class="n">villes</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="admonition hint">
+<p class="admonition-title">Indication</p>
+<p>La fonction itineraire est une fonction qui prend comme input les noms de deux gares et
+elle revoit la carte maps qui contient l’itineraire ainsi que la distance, le prix et le prix
+moyen par kilomètre entre les deux gares.</p>
+</div>
+<p>Si vous voulez le code complet, vous pouvez consulter le lien suivant :
+<a class="reference external" href="https://github.com/SENEAssane/ProjectGroup7/blob/main/Package/Script/Carte_interactif.py">https://github.com/SENEAssane/ProjectGroup7/blob/main/Package/Script/Carte_interactif.py</a></p>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="../OptimisationTrajet/Optimisation.html" class="btn btn-neutral float-right" title="Partie Algorithme d’optimisation" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="../index.html" class="btn btn-neutral float-left" title="Autoroutes du Sud-Ouest de la France" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright  HAX712X_2021 : Ait moulay Abderrahim | Assane Sene | Adrien Simon.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

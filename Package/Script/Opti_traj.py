@@ -39,21 +39,7 @@ for i in range (len(GPS)):
 print(dist)
 
 
-# %%
-######################################
-#la portion de code suivante traite de l'optimisation du trajet 
-
-######################################
-
-from itertools import combinations
-import networkx as nx
-from ipywidgets import interact
-
-# Lecture de la base de données Data_prix 
-data_prix=pd.read_csv('Data_prix.csv')
-
-def functOpti(entree,sortie,nbdeinout):
-   return 
+#%%
  
 ######################################
 #la portion de code suivante traite de l'optimisation du trajet 

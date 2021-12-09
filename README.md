@@ -24,6 +24,10 @@ Il permettra, entre autres de minimiser le coût du trajet en sortant et re-entr
 Nous avons trois objectifs majeurs :
 
 - Afficher une carte cliquable du réseau d'autoroutes
+          <p align="center">
+          <img src="https://github.com/abderrahim-ait/ProjectGroup7/blob/main/Doc/build/html/_images/Carte.gif" width="300" title="Autoroute">
+          </p>
+
 - Afficher une distribution des prix selon les portions de route
 - Concevoir un algorithme permettant de calculer les points de sortie optimaux pour un trajet donné pour minimiser le prix du trajet 
 

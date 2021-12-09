@@ -15,8 +15,14 @@ import openrouteservice
 from Opti_traj import *
 from distribution_prix_km import *
 
+# importer la base de données Base.csv
+url = 'https://raw.githubusercontent.com/SENEAssane/ProjectGroup7/main/Package/Data/Base.csv'
+path = os.path.join(os.getcwd(),'Base.csv')
+download(url, path, replace=True)
+geo = pd.read_csv('./Base.csv')
+geo = geo.rename(columns={' NOMGARE ':'NOM GARE'})
 
-
+# importer la base de données dataprixnettoye.csv
 url = 'https://raw.githubusercontent.com/SENEAssane/ProjectGroup7/main/dataprixnettoye.csv'
 path = os.path.join(os.getcwd(),'dataprixnettoye.csv')
 download(url, path, replace=True)

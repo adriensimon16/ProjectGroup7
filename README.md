@@ -30,7 +30,7 @@ Nous avons trois objectifs majeurs :
 
 Nous avons également fourni deux dataframes avec les prix entre sorties et les distances entre sorties. Ainsi qu'un readme.md explicatif pour utiliser le programme. 
 
-Nous nous sommes servis des packages suivants pour la conception du package : `requests` `json` `pandas` `pyproj` `geopandas` `osmnx` `numpy` `dowload` `networkX` `itertools`
+Nous nous sommes servis des packages suivants pour la conception du package : `requests` `json` `pandas` `pyproj` `geopandas` `osmnx` `numpy` `download` `networkX` `itertools`
 
 
 

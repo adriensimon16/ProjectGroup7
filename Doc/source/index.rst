@@ -28,7 +28,7 @@ Packages et prérequis
 
 ..  Note ::
  Packages nécessaires au fonctionnement du programme :
- ``requests`` ``json`` ``pandas`` ``pyproj`` ``geopandas`` ``osmnx`` ``numpy`` ``dowload``
+ ``requests`` ``json`` ``pandas`` ``pyproj`` ``geopandas`` ``osmnx`` ``numpy`` ``download``
 
 
 

@@ -15,6 +15,10 @@ Ce projet à pour but de créer un package python permettant à tout utilisateur
 
 Il permettra, entre autres de minimiser le coût du trajet en sortant et re-entrant sur l'autoroute selon un nombre maximum de sorties choisi par l'utilisateur, d'afficher une carte cliquable du réseau autoroutier et de donner une distribution des prix entre sorties.
 
+<p align="center">
+  <img src="https://github.com/abderrahim-ait/ProjectGroup7/blob/main/Doc/source/carte.png" width="300" title="Autoroute">
+</p>
+
 ## Méthode 
 
 Nous avons trois objectifs majeurs :

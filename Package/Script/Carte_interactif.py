@@ -22,7 +22,7 @@ path = os.path.join(os.getcwd(),'Datadistance.csv')
 download(ur1, path, replace=True)
 Dist = pd.read_csv('./Datadistance.csv')
 
-# importer la base de données Data_distance.csv
+# importer la base de données dataprixnettoye.csv
 ur1 = 'https://raw.githubusercontent.com/SENEAssane/ProjectGroup7/main/Package/Data/dataprixnettoye.csv'
 path = os.path.join(os.getcwd(),'dataprixnettoye.csv')
 download(ur1, path, replace=True)
@@ -79,7 +79,7 @@ def itineraire(DEPART, ARRIVEE):
                 decoded = convert.decode_polyline(geometry)
                 distance_txt = "<h4> <b>Distance :&nbsp" + "<strong>"+str(round(res['routes'][0]['summary']['distance']/1000,1))+" Km </strong>" +"</h4></b>"
                 prix_txt = "<h4> <b>Prix :&nbsp" + "<strong>"+str(pr)+" € </strong>" +"</h4></b>"
-                prix_moy_txt = "<h4> <b>Prix Moyenne par KM :&nbsp" + "<strong>"+str(round(moy,3))+" € </strong>" +"</h4></b>"
+                prix_moy_txt = "<h4> <b>Prix Moyen par KM :&nbsp" + "<strong>"+str(round(moy,3))+" € </strong>" +"</h4></b>"
                 folium.GeoJson(decoded).add_child(folium.Popup(distance_txt+prix_txt+prix_moy_txt,max_width = 300)).add_to(m)
 
                 folium.Marker(
@@ -122,7 +122,7 @@ def itineraire(DEPART, ARRIVEE):
                 decoded = convert.decode_polyline(geometry)
                 distance_txt = "<h4> <b>Distance :&nbsp" + "<strong>"+str(round(res['routes'][0]['summary']['distance']/1000,1))+" Km </strong>" +"</h4></b>"
                 prix_txt = "<h4> <b>Prix :&nbsp" + "<strong>"+str(pr)+" € </strong>" +"</h4></b>"
-                prix_moy_txt = "<h4> <b>Prix Moyenne par KM :&nbsp" + "<strong>"+str(round(moy,3))+" € </strong>" +"</h4></b>"
+                prix_moy_txt = "<h4> <b>Prix Moyen par KM :&nbsp" + "<strong>"+str(round(moy,3))+" € </strong>" +"</h4></b>"
                 folium.GeoJson(decoded).add_child(folium.Popup(distance_txt+prix_txt+prix_moy_txt,max_width = 300)).add_to(m)
 
                 folium.Marker(

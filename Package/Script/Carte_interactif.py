@@ -64,9 +64,9 @@ def itineraire(DEPART, ARRIVEE):
         client = openrouteservice.Client(key='5b3ce3597851110001cf6248a649f5b5021e4f02b016b51649758663')  # Specify your personal API key
 
         m = folium.Map(
-                        location=[43.1837661, 3.0042121],
-                        zoom_start=10,
-                        control_scale=True)
+                        location = [43.1837661, 3.0042121],
+                        zoom_start = 10,
+                        control_scale = True )
 
         for i in range(0, len(coor)-1):
             coord = coor[i], coor[i+1]
@@ -107,9 +107,9 @@ def itineraire(DEPART, ARRIVEE):
 
         client = openrouteservice.Client(key='5b3ce3597851110001cf62486f5564a064e34f3895221e5a0d9a2405')
         m = folium.Map(
-                        location=[43.1837661, 3.0042121],
-                        zoom_start=10,
-                        control_scale=True)
+                        location = [43.1837661, 3.0042121],
+                        zoom_start = 10,
+                        control_scale = True)
 
         for i in range(0, len(coor)-1):
             coord = coor[i], coor[i+1]

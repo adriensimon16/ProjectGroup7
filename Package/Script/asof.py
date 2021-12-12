@@ -1,19 +1,13 @@
 #%%
-import folium
 from download import download
 import os
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
-import requests
-import openrouteservice
-from openrouteservice import convert
-import json
-from Opti_traj import *
-from openrouteservice import convert
-import openrouteservice
+from Carte_interactif import *
 from Opti_traj import *
 from distribution_prix_km import *
+from ipywidgets import interact
 
 # importer la base de données Base.csv
 url = 'https://raw.githubusercontent.com/SENEAssane/ProjectGroup7/main/Package/Data/Base.csv'
@@ -23,7 +17,7 @@ geo = pd.read_csv('./Base.csv')
 geo = geo.rename(columns={' NOMGARE ':'NOM GARE'})
 
 # importer la base de données dataprixnettoye.csv
-url = 'https://raw.githubusercontent.com/SENEAssane/ProjectGroup7/main/dataprixnettoye.csv'
+url = 'https://raw.githubusercontent.com/SENEAssane/ProjectGroup7/main/Package/Data/dataprixnettoye.csv'
 path = os.path.join(os.getcwd(),'dataprixnettoye.csv')
 download(url, path, replace=True)
 prix = pd.read_csv('./dataprixnettoye.csv')

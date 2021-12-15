@@ -9,36 +9,6 @@ import requests
 import json
 #%%
 
-#Partie de calcul des coordonnées de chaque sortie
-
-data = pd.read_csv("coordonnées.csv")
-X = data['X']
-Y = data['Y']
-# Création d'une vecteur qui contient les coordonées GPS  
-GPS = [] 
-for i in range (len(data)):
- GPS.append((X[i],Y[i]))
-
-# %%
-# Le calcul du vecteur distance 
-dist = []
-for i in range (len(GPS)):
-  if i-1 < 0:
-     x,y = GPS[i]
-  else:
-     x,y = GPS[i-1]
-  x1,y1=GPS[i]
-
-  r = requests.get(f"http://router.project-osrm.org/route/v1/car/{x},{y};{x1},{y1}?overview=false""")
-
-
-  routes =json.loads(r.content)
-  route_1 = routes.get("routes")[0]
-  dist.append(round(route_1['distance']/1000))
-
-
-#%%
- 
 ######################################
 #la portion de code suivante traite de l'optimisation du trajet 
 

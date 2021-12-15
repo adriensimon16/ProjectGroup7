@@ -123,5 +123,5 @@ def kde_explore(entre = villes, sortie = villes,  bw = 0.3):
    plt.tight_layout()
    plt.show()
 
-interact(kde_explore, entre = villes, sortie = villes, bw = (0.001, 2, 0.01))
+#interact(kde_explore, entre = villes, sortie = villes, bw = (0.001, 2, 0.01))
 # %%

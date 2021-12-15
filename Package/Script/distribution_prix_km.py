@@ -9,7 +9,7 @@ import numpy as np
 import os
 from scipy.stats.kde import gaussian_kde
 from ipywidgets import widgets, interact, interactive, fixed, interact_manual
-from Opti_traj import *
+from Package.Script.Opti_traj import *
 #%%
 ''' importer la base de données Datadistance.csv '''
 ur1 = 'https://raw.githubusercontent.com/SENEAssane/ProjectGroup7/main/Package/Data/Datadistance.csv'

@@ -6,7 +6,7 @@ import folium
 from openrouteservice import convert
 import openrouteservice
 import json
-from Opti_traj import *
+from Package.Script.Opti_traj import *
 from ipywidgets import interact
 
 # importer la base de données Base.csv

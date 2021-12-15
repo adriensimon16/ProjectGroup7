@@ -143,4 +143,4 @@ def itineraire(DEPART, ARRIVEE):
         print("Veuilliez entrer deux sorties différentes")  
 
 # Affichage de la carte avec la fonction interact
-interact(itineraire, DEPART = villes, ARRIVEE = villes)
+#interact(itineraire, DEPART = villes, ARRIVEE = villes)
